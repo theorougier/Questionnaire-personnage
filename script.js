@@ -31,6 +31,129 @@ const questions = [
     }
 ];
 
+const characterDescriptions = {
+    "Aloy": {
+        description: "Chasseuse agile et curieuse, explorant un monde post-apocalyptique dominé par des machines.",
+        jeux: "Horizon Zero Dawn / Horizon Forbidden West",
+        image: "./assets/IMG_0240.jpeg"
+    },
+    "Lara Croft": {
+        description: "Archéologue intrépide, spécialiste en survie, qui explore des tombes dangereuses.",
+        jeux: "Tomb Raider",
+        image: "./assets/b5b337443e87208010bec4a9fba882d9.jpg"
+    },
+    "Link": {
+        description: "Héros courageux du temps, destiné à sauver Hyrule et la princesse Zelda.",
+        jeux: "The Legend of Zelda",
+        image: "./assets/1807834.jpg"
+    },
+    "Maxine": {
+        description: "Lycéenne artistique avec le pouvoir de remonter le temps, confrontée à des choix difficiles.",
+        jeux: "Life is Strange",
+        image: "./assets/Maxine-0.jpg"
+    },
+    "Alex": {
+        description: "Personnage empathique avec le pouvoir de ressentir et manipuler les émotions des autres.",
+        jeux: "Life is Strange: True Colors",
+        image: "./assets/alex-chen-est-la-nouvelle-heroine-de-la-serie-life-is-strange-c-square-e-960x640.jpg"
+    },
+    "Ellie": {
+        description: "Survivante dans un monde post-apocalyptique, confrontée à des choix moraux difficiles.",
+        jeux: "The Last of Us / The Last of Us Part II",
+        image: "./assets/Part_II_Ellie_infobox.png"
+    },
+    "Abby": {
+        description: "Soldate forte et complexe cherchant la vengeance dans un monde dévasté par une pandémie.",
+        jeux: "The Last of Us Part II",
+        image: "./assets/TLOU2-Abby-jeune-portrait.jpg"
+    },
+    "Peach": {
+        description: "Princesse du Royaume Champignon, souvent enlevée par Bowser mais aussi une combattante habile.",
+        jeux: "Série Super Mario",
+        image: "./assets/Peach_Infobox.png"
+    },
+    "Mario": {
+        description: "Plombier italien aventureux, toujours prêt à sauver la Princesse Peach et le Royaume Champignon.",
+        jeux: "Série Super Mario",
+        image: "./assets/mario.png"
+    },
+    "Nathan Drake": {
+        description: "Chasseur de trésors charismatique avec un penchant pour l'histoire et l'aventure.",
+        jeux: "Uncharted",
+        image: "./assets/1800556.jpg"
+    },
+    "Zelda": {
+        description: "Princesse de Hyrule possédant une sagesse profonde et des pouvoirs magiques, joue un rôle clé dans la lutte contre le mal.",
+        jeux: "The Legend of Zelda",
+        image: "./assets/TotK_Zelda.jpg"
+    },
+    "Ganondorf": {
+        description: "Antagoniste puissant de la série The Legend of Zelda, cherche à conquérir Hyrule.",
+        jeux: "The Legend of Zelda",
+        image: "./assets/Fwu6PAsWIAAgjAj.jpg"
+    },
+    "Duke Nukem": {
+        description: "Héros emblématique avec une attitude macho, connu pour ses répliques cultes et sa lutte contre les aliens.",
+        jeux: "Duke Nukem",
+        image: "./assets/Duke_Nukem.jpg"
+    },
+    "Jade": {
+        description: "Reporter courageuse et experte en arts martiaux, lutte contre une conspiration alien",
+        jeux: "Beyond Good & Evil",
+        image: "./assets/jade-beyond-good-and-evil-3d-model-6cfe14cfad.jpg"
+    },
+    "Doomfist": {
+        description: "Vilain charismatique d'Overwatch, croit que le conflit mène à l'évolution de l'humanité.",
+        jeux: "Overwatch",
+        image: "images/doomfist.jpg"
+    },
+    "Ana": {
+        description: "Tireuse d'élite et fondatrice d'Overwatch, se bat pour protéger les innocents et apporter la paix.",
+        jeux: "Overwatch",
+        image: "./assets/Ana_Skin_Classic.png"
+    },
+    "Miles Morales": {
+        description: "Jeune héros suivant les traces de Spider-Man, découvre le poids de l'héritage et l'importance de la famille.",
+        jeux: "Marvel's Spider-Man: Miles Morales",
+        image: "./assets/PRfYtTZQsuj3ALrBXGL8MjAH.jpg"
+    },
+    "Yu & Kay": {
+        description: "Couple amoureux explorant une planète inconnue, cherchant à survivre et à comprendre leur relation.",
+        jeux: "Haven",
+        image: "./assets/50062868046_713ec42514_k.jpg"
+    },
+    "Miss Fortune": {
+        description: "Capitaine pirate redoutée de League of Legends, connue pour sa détermination et son adresse au tir.",
+        jeux: "League of Legends",
+        image: "./assets/images.jpeg"
+    },
+    "Gragas": {
+        description: "Combattant jovial et buveur de League of Legends, célèbre pour sa force et son amour de la bonne boisson.",
+        jeux: "League of Legends",
+        image: "./assets/Z.jpeg"
+    },
+    "Celeste": {
+        description: "Jeune femme affrontant ses démons intérieurs en escaladant une montagne, métaphore de son voyage intérieur.",
+        jeux: "Celeste",
+        image: "./assets/celeste-qxwmguubd5r5.jpg"
+    },
+    "Ada Wong": {
+        description: "Espionne mystérieuse et manipulatrice, opère souvent dans l'ombre pour atteindre ses objectifs.",
+        jeux: "Resident Evil",
+        image: "./assets/Ada_portrait_91.jpg"
+    },
+    "Chris Redfield": {
+        description: "Membre de l'équipe d'élite S.T.A.R.S et combattant du bioterrorisme, déterminé et courageux.",
+        jeux: "Resident Evil",
+        image: "./assets/Chris_RE5.jpg"
+    },
+    "Bob": {
+        description: "Combattant de Tekken au style de combat rapide et agile, malgré son apparence imposante.",
+        jeux: "Tekken",
+        image: "./assets/Bob_T7FR.jpg"
+    },
+};
+
 
 let currentQuestionIndex = 0;
 let scores = {};
@@ -70,7 +193,12 @@ function displayResult() {
     document.getElementById("questionnaireContainer").style.display = "none";
     const resultElement = document.getElementById("result");
     const winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-    resultElement.innerHTML = `Le personnage qui vous correspond le plus est : <strong>${winner}</strong>`;
+    const characterInfo = characterDescriptions[winner] || {};
+    const description = characterInfo.description || "Pas de description disponible.";
+    const jeux = characterInfo.jeux || "Pas de description disponible.";
+    const imagePath = characterInfo.image || ""; // Fournissez un chemin par défaut si nécessaire
+    resultElement.innerHTML = `<h3>Le personnage qui vous correspond le plus est : <strong>${winner}</strong> dans ${jeux}</h3>
+                               <img src="${imagePath}" alt="${winner}" style="max-width:200px;"/><p>${description}</p>`;
     resultElement.style.display = "block";
 }
 

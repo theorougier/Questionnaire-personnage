@@ -60,7 +60,7 @@ const characterDescriptions = {
     "Ellie": {
         description: "Survivante dans un monde post-apocalyptique, confrontée à des choix moraux difficiles.",
         jeux: "The Last of Us / The Last of Us Part II",
-        image: "./assets/Part_II_Ellie_infobox.png"
+        image: "./assets/Part_II_Ellie_infobox.jpg"
     },
     "Abby": {
         description: "Soldate forte et complexe cherchant la vengeance dans un monde dévasté par une pandémie.",
@@ -70,7 +70,7 @@ const characterDescriptions = {
     "Peach": {
         description: "Princesse du Royaume Champignon, souvent enlevée par Bowser mais aussi une combattante habile.",
         jeux: "Série Super Mario",
-        image: "./assets/Peach_Infobox.png"
+        image: "./assets/Peach_Infobox.jpg"
     },
     "Mario": {
         description: "Plombier italien aventureux, toujours prêt à sauver la Princesse Peach et le Royaume Champignon.",
@@ -105,12 +105,12 @@ const characterDescriptions = {
     "Doomfist": {
         description: "Vilain charismatique d'Overwatch, croit que le conflit mène à l'évolution de l'humanité.",
         jeux: "Overwatch",
-        image: "images/doomfist.jpg"
+        image: "./assets/OW2_Doomfist_render.jpg"
     },
     "Ana": {
         description: "Tireuse d'élite et fondatrice d'Overwatch, se bat pour protéger les innocents et apporter la paix.",
         jeux: "Overwatch",
-        image: "./assets/Ana_Skin_Classic.png"
+        image: "./assets/Ana_Skin_Classic.jpg"
     },
     "Miles Morales": {
         description: "Jeune héros suivant les traces de Spider-Man, découvre le poids de l'héritage et l'importance de la famille.",
@@ -200,10 +200,6 @@ function displayResult() {
     resultElement.innerHTML = `<h3>Le personnage qui vous correspond le plus est : <strong>${winner}</strong> dans ${jeux}</h3>
                                <img src="${imagePath}" alt="${winner}" style="max-width:200px;"/><p>${description}</p>`;
     resultElement.style.display = "block";
-}
-
-function nextQuestion() {
-    // Cette fonction peut être utilisée si vous avez un bouton "Suivant" distinct pour chaque question.
 }
 
 // Initialisation

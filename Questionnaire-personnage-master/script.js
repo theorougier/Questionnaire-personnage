@@ -160,13 +160,13 @@ let currentQuestionIndex = 0;
 let scores = {};
 
 const questionBackgrounds = [
-    "url('assets/fond1.jpeg')",
-    "url('assets/fond2.jpg')",
-    "url('assets/fond3.jpg')",
-    "url('assets/fond4.jpg')",
-    "url('assets/fond5.jpg')",
-    "url('assets/fond6.jpg')",
-    "url('assets/fond7.jpg')",
+    "url('assets/fond1.webp')",
+    "url('assets/fond2.webp')",
+    "url('assets/fond3.webp')",
+    "url('assets/fond4.webp')",
+    "url('assets/fond5.webp')",
+    "url('assets/fond6.webp')",
+    "url('assets/fond7.webp')",
 ];
 
 function displayQuestion() {
@@ -182,7 +182,7 @@ function displayQuestion() {
     });
 
     // Modifier le fond d'écran
-    document.body.style.backgroundImage = questionBackgrounds[currentQuestionIndex];
+    document.querySelector('html').style.backgroundImage = questionBackgrounds[currentQuestionIndex];
 }
 
 function selectOption(index) {
